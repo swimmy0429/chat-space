@@ -25,7 +25,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|reference|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|group_id|reference|null: false, foreign_key: true|
 ### Association
 - belongs_to :group
 - belongs_to :user
@@ -35,8 +35,8 @@
 |------|----|-------|
 |body|text||
 |image|string||
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|reference|null: false, foreign_key: true|
+|group_id|reference|null: false, foreign_key: true|
 ### Association
 - belong_to :user
 - belong_to :group
