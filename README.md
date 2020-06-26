@@ -6,18 +6,20 @@
 |------|----|-------|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|username|string|null: false, add_index: true|
+|name|string|null: false, add_index: true|
 ### Association
 - has_many :groups, through:  :groups_users
 - has_many :messages
+- has_many :groups_users
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|string|null: false|
+|name|string|null: false|
 ### Association
 - has_many :messages
 - has_many  :users,  through:  :groups_users
+- has_many :groups_users
 
 ## groups_usersテーブル
 |Column|Type|Options|
