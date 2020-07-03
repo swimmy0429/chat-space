@@ -1,22 +1,21 @@
-.side-bar__user-name
-  .top-item
-    .top-item__name
-      = current_user.name
-    %ul.top-item__icon
-      %li.top-item__icon--edit
-      = link_to "#" do
-        = icon('far', 'edit', class: "top-item__icon--edit")
-      %li.top-item__icon--cog
-      = link_to edit_user_path(current_user) do
-        = icon('fas', 'cog', class: "top-item__icon--cog")
-.side-bar__group-list
-  .list-item
-    .list-item__name
-      techcamp
-    .list-item__message
-      まだメッセージはありません
-  .list-item
-    .list-item__name
-      techcamp2
-    .list-item__message
-      まだメッセージはありません
+.side-bar
+  .side-bar__user-name
+    .top-item
+      .top-item__name
+        = current_user.name
+      %ul.top-item__icon
+        %li.top-item__icon--edit
+        = link_to new_group_path do
+          = icon('far', 'edit', class: "top-item__icon--edit")
+        %li.top-item__icon--cog
+        = link_to edit_user_path(current_user) do
+          = icon('fas', 'cog', class: "top-item__icon--cog")
+          
+  .side-bar__group-list
+    - current_user.groups.each do |group|
+      .list-item
+        = link_to '#' do
+          .list-item__name
+            = group.name
+          .list-item__message
+            まだメッセージはありません
