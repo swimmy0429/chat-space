@@ -3,7 +3,7 @@
     = message.user.name
     %li.chat-main__message-list__item__member__time
       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-.chat-main__message-list__message
+.chat-main__message-list__message{data: {message: {id: message.id}}}
   - if message.content.present?
     %p.chat-main__message-list__message__content
       = message.content
